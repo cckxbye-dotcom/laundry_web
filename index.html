@@ -1,24 +1,29 @@
 <!DOCTYPE html>
-<html lang="zh-Hant-HK">
+<html lang="zh-HK">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>俊傑洗衣 | 專業磅洗・洗被・乾洗・上門收送服務</title>
-  <meta name="description" content="俊傑洗衣提供專業磅洗、冷氣被羽絨被清洗、西裝乾洗及上門收送服務。一人一機獨立清洗，高溫殺菌烘乾，支援 WhatsApp 快捷預約。" />
+  <title>俊傑洗衣 CHUN KIT LAUNDRY | 專業磅洗・洗被・乾洗及上門收送服務</title>
+  <meta name="description" content="俊傑洗衣提供專業商用磅洗、冷氣被羽絨被清洗、西裝大褸乾洗及上門收送服務。一人一機獨立清洗，高溫殺菌烘乾，支援 WhatsApp 快捷預約。" />
   <style>
     :root {
-      --primary: #0f62fe;
-      --primary-dark: #0043ce;
-      --primary-light: #edf5ff;
-      --whatsapp: #25d366;
-      --whatsapp-dark: #1ebe5d;
-      --text-main: #161616;
-      --text-sub: #525252;
-      --bg-page: #f4f7fb;
-      --bg-card: #ffffff;
-      --border: #e0e6ed;
-      --radius: 14px;
-      --shadow: 0 4px 16px rgba(15, 35, 65, 0.06);
+      --navy-900: #0f172a;
+      --navy-800: #1e293b;
+      --navy-700: #1e3a8a;
+      --navy-600: #1d4ed8;
+      --slate-50: #f8fafc;
+      --slate-100: #f1f5f9;
+      --slate-200: #e2e8f0;
+      --slate-400: #94a3b8;
+      --slate-600: #475569;
+      --slate-800: #1e293b;
+      --accent-blue: #eff6ff;
+      --accent-border: #bfdbfe;
+      --whatsapp: #16a34a;
+      --whatsapp-hover: #15803d;
+      --radius: 12px;
+      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06);
+      --shadow-md: 0 6px 20px rgba(15, 23, 42, 0.07);
     }
 
     * {
@@ -32,21 +37,44 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "PingFang HK", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
-      background-color: var(--bg-page);
-      color: var(--text-main);
-      line-height: 1.6;
-      padding-bottom: 92px;
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang HK", "Noto Sans TC", "Segoe UI", Roboto, "Microsoft JhengHei", sans-serif;
+      background-color: var(--slate-50);
+      color: var(--slate-800);
+      line-height: 1.65;
+      padding-bottom: 94px;
+      -webkit-font-smoothing: antialiased;
     }
 
-    /* Top Header */
+    .icon {
+      width: 20px;
+      height: 20px;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+      flex-shrink: 0;
+    }
+
+    .icon-sm {
+      width: 16px;
+      height: 16px;
+    }
+
+    .icon-lg {
+      width: 24px;
+      height: 24px;
+    }
+
+    /* Top Sticky Navigation */
     .navbar {
-      background: #ffffff;
-      border-bottom: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.97);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--slate-200);
       position: sticky;
       top: 0;
       z-index: 50;
-      padding: 12px 16px;
+      padding: 13px 16px;
     }
 
     .navbar-inner {
@@ -60,104 +88,157 @@
     .brand {
       display: flex;
       align-items: center;
-      gap: 8px;
-      font-weight: 800;
-      font-size: 1.15rem;
-      color: var(--primary);
+      gap: 10px;
       text-decoration: none;
+      color: var(--navy-900);
+    }
+
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      background: var(--navy-900);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
+    }
+
+    .brand-zh {
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      color: var(--navy-900);
+    }
+
+    .brand-en {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 1.4px;
+      color: var(--slate-600);
     }
 
     .nav-links {
       display: flex;
-      gap: 14px;
-      font-size: 0.9rem;
+      gap: 16px;
+      font-size: 0.86rem;
     }
 
     .nav-links a {
-      color: var(--text-sub);
+      color: var(--slate-600);
       text-decoration: none;
       font-weight: 600;
+      transition: color 0.15s;
     }
 
     .nav-links a:hover {
-      color: var(--primary);
+      color: var(--navy-700);
     }
 
     /* Hero Banner */
     .hero {
-      background: linear-gradient(135deg, #0f62fe 0%, #0039a6 100%);
+      background: linear-gradient(145deg, #0f172a 0%, #1e293b 55%, #1e3a8a 100%);
       color: #ffffff;
-      padding: 36px 18px 42px;
-      text-align: center;
+      padding: 40px 16px 52px;
+      border-bottom: 1px solid #1e293b;
     }
 
     .hero-inner {
       max-width: 760px;
       margin: 0 auto;
+      text-align: center;
     }
 
-    .badge {
-      display: inline-block;
-      background: rgba(255, 255, 255, 0.18);
-      padding: 4px 12px;
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #e2e8f0;
+      padding: 5px 14px;
       border-radius: 999px;
-      font-size: 0.82rem;
+      font-size: 0.78rem;
       font-weight: 600;
-      margin-bottom: 12px;
+      letter-spacing: 0.6px;
+      margin-bottom: 14px;
     }
 
     .hero h1 {
       font-size: 1.85rem;
       font-weight: 800;
-      margin-bottom: 8px;
       letter-spacing: 0.5px;
+      margin-bottom: 10px;
+      line-height: 1.3;
     }
 
     .hero p {
-      font-size: 0.98rem;
-      opacity: 0.92;
-      max-width: 540px;
-      margin: 0 auto 20px;
+      font-size: 0.94rem;
+      color: #cbd5e1;
+      max-width: 560px;
+      margin: 0 auto 24px;
     }
 
     .hero-actions {
       display: flex;
-      gap: 10px;
+      gap: 12px;
       justify-content: center;
       flex-wrap: wrap;
     }
 
     .btn-hero-primary {
       background: #ffffff;
-      color: var(--primary);
-      padding: 11px 22px;
-      border-radius: 999px;
+      color: var(--navy-900);
+      padding: 11px 24px;
+      border-radius: 8px;
       font-weight: 700;
       text-decoration: none;
-      font-size: 0.95rem;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      font-size: 0.92rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+      transition: transform 0.15s, background 0.15s;
+    }
+
+    .btn-hero-primary:hover {
+      background: #f8fafc;
+      transform: translateY(-1px);
     }
 
     .btn-hero-secondary {
-      background: rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.08);
       color: #ffffff;
-      border: 1px solid rgba(255, 255, 255, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.28);
       padding: 11px 20px;
-      border-radius: 999px;
+      border-radius: 8px;
       font-weight: 600;
       text-decoration: none;
-      font-size: 0.95rem;
+      font-size: 0.92rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
     }
 
-    /* Container */
+    .btn-hero-secondary:hover {
+      background: rgba(255, 255, 255, 0.14);
+    }
+
+    /* Main Container */
     .container {
       max-width: 760px;
       margin: 0 auto;
-      padding: 18px 14px;
+      padding: 0 14px 24px;
     }
 
-    /* Feature Grid */
-    .features {
+    /* 4 Core Standards */
+    .standards-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 10px;
@@ -166,210 +247,353 @@
     }
 
     @media (min-width: 640px) {
-      .features {
+      .standards-grid {
         grid-template-columns: repeat(4, 1fr);
       }
     }
 
-    .feature-card {
-      background: var(--bg-card);
-      border-radius: 12px;
-      padding: 14px 12px;
-      text-align: center;
-      box-shadow: var(--shadow);
-      border: 1px solid var(--border);
+    .standard-card {
+      background: #ffffff;
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius);
+      padding: 15px 12px;
+      box-shadow: var(--shadow-md);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
     }
 
-    .feature-icon {
-      font-size: 1.5rem;
-      margin-bottom: 4px;
+    .standard-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      background: var(--accent-blue);
+      color: var(--navy-700);
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    .feature-title {
+    .standard-title {
       font-weight: 700;
-      font-size: 0.92rem;
-      margin-bottom: 2px;
+      font-size: 0.9rem;
+      color: var(--navy-900);
     }
 
-    .feature-desc {
-      font-size: 0.78rem;
-      color: var(--text-sub);
+    .standard-desc {
+      font-size: 0.77rem;
+      color: var(--slate-600);
+      line-height: 1.45;
     }
 
     /* Card Section */
     .card {
-      background: var(--bg-card);
+      background: #ffffff;
+      border: 1px solid var(--slate-200);
       border-radius: var(--radius);
       padding: 20px 18px;
       margin-bottom: 18px;
-      box-shadow: var(--shadow);
-      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--slate-200);
     }
 
     .section-title {
-      font-size: 1.15rem;
+      font-size: 1.06rem;
       font-weight: 800;
-      color: var(--text-main);
-      margin-bottom: 14px;
+      color: var(--navy-900);
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 9px;
     }
 
-    .section-num {
-      background: var(--primary);
-      color: #fff;
+    .section-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--navy-700);
+      background: var(--accent-blue);
+      border: 1px solid var(--accent-border);
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+
+    .step-badge {
+      background: var(--navy-900);
+      color: #ffffff;
       width: 24px;
       height: 24px;
-      border-radius: 50%;
+      border-radius: 6px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       font-weight: 700;
       flex-shrink: 0;
     }
 
-    /* Delivery Info Box */
+    /* 4-Step Workflow */
+    .workflow-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    @media (min-width: 640px) {
+      .workflow-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .workflow-step {
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: 10px;
+      padding: 13px 12px;
+      position: relative;
+    }
+
+    .workflow-num {
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: var(--navy-700);
+      letter-spacing: 0.6px;
+      margin-bottom: 4px;
+    }
+
+    .workflow-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--navy-900);
+      margin-bottom: 3px;
+    }
+
+    .workflow-desc {
+      font-size: 0.78rem;
+      color: var(--slate-600);
+      line-height: 1.45;
+    }
+
+    /* Storefront & Delivery Info Grid */
     .info-grid {
       display: grid;
       grid-template-columns: 1fr;
       gap: 10px;
     }
 
-    @media (min-width: 600px) {
+    @media (min-width: 580px) {
       .info-grid {
         grid-template-columns: repeat(2, 1fr);
       }
     }
 
     .info-box {
-      background: var(--primary-light);
-      border-radius: 10px;
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-left: 3px solid var(--navy-700);
+      border-radius: 8px;
       padding: 12px 14px;
-      font-size: 0.88rem;
+      font-size: 0.85rem;
+      color: var(--slate-600);
     }
 
-    .info-box strong {
-      display: block;
-      color: var(--primary-dark);
-      margin-bottom: 3px;
-      font-size: 0.92rem;
+    .info-box-head {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--navy-900);
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-bottom: 4px;
+    }
+
+    /* Shop Location Strip */
+    .shop-strip {
+      margin-top: 12px;
+      background: var(--accent-blue);
+      border: 1px solid var(--accent-border);
+      border-radius: 8px;
+      padding: 12px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 0.85rem;
+    }
+
+    .shop-strip-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      color: var(--navy-900);
+    }
+
+    .shop-strip-row strong {
+      min-width: 72px;
+      flex-shrink: 0;
     }
 
     /* Form Controls */
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    @media (min-width: 580px) {
+      .form-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
     .form-group {
-      margin-bottom: 14px;
-    }
-
-    .form-group label {
-      display: block;
-      font-weight: 700;
-      font-size: 0.9rem;
-      margin-bottom: 6px;
-      color: var(--text-main);
-    }
-
-    .required {
-      color: #da1e28;
-    }
-
-    .form-control {
-      width: 100%;
-      padding: 11px 13px;
-      border: 1.5px solid #cbd5e1;
-      border-radius: 10px;
-      font-size: 0.95rem;
-      font-family: inherit;
-      background: #fff;
-      transition: border-color 0.2s;
-    }
-
-    .form-control:focus {
-      outline: none;
-      border-color: var(--primary);
-    }
-
-    /* Accordion Service Categories */
-    details.service-cat {
-      border: 1px solid var(--border);
-      border-radius: 12px;
       margin-bottom: 12px;
-      overflow: hidden;
-      background: #fff;
     }
 
-    details.service-cat summary {
-      background: #f8fafc;
+    .form-grid .form-group {
+      margin-bottom: 0;
+    }
+
+    label {
+      display: block;
+      font-size: 0.86rem;
+      margin-bottom: 5px;
+      font-weight: 700;
+      color: var(--navy-900);
+    }
+
+    .req {
+      color: #dc2626;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 0.94rem;
+      font-family: inherit;
+      background: #ffffff;
+      color: var(--navy-900);
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: var(--navy-700);
+      box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+    }
+
+    /* Service Accordions */
+    details.service-group {
+      border: 1px solid var(--slate-200);
+      border-radius: 10px;
+      margin-bottom: 10px;
+      overflow: hidden;
+      background: #ffffff;
+    }
+
+    details.service-group summary {
+      background: var(--slate-100);
       padding: 13px 15px;
       font-weight: 700;
-      font-size: 0.98rem;
+      font-size: 0.94rem;
+      color: var(--navy-900);
       cursor: pointer;
+      user-select: none;
       list-style: none;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      user-select: none;
     }
 
-    details.service-cat summary::-webkit-details-marker {
+    details.service-group summary::-webkit-details-marker {
       display: none;
     }
 
-    details.service-cat summary::after {
-      content: "▼";
-      font-size: 0.75rem;
-      color: var(--text-sub);
+    .summary-left {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .summary-en {
+      font-size: 0.76rem;
+      font-weight: 600;
+      color: var(--slate-600);
+      letter-spacing: 0.4px;
+    }
+
+    .chevron {
+      width: 16px;
+      height: 16px;
+      color: var(--slate-600);
       transition: transform 0.2s;
     }
 
-    details.service-cat[open] summary::after {
+    details.service-group[open] .chevron {
       transform: rotate(180deg);
     }
 
-    .cat-note {
-      background: #fffbeb;
-      color: #92400e;
-      font-size: 0.82rem;
+    .cat-tip {
+      background: #f8fafc;
+      color: var(--slate-600);
+      font-size: 0.8rem;
       padding: 8px 14px;
-      border-bottom: 1px solid #fef3c7;
+      border-top: 1px solid var(--slate-200);
+      border-bottom: 1px solid var(--slate-200);
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
 
-    .item-list {
-      padding: 6px 14px;
+    .details-content {
+      padding: 4px 14px;
+      border-top: 1px solid var(--slate-200);
     }
 
-    .service-item {
+    .item-row {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 11px 0;
-      border-bottom: 1px solid #f1f5f9;
+      border-bottom: 1px solid var(--slate-100);
       gap: 10px;
+      font-size: 0.91rem;
     }
 
-    .service-item:last-child {
+    .item-row:last-child {
       border-bottom: none;
     }
 
-    .item-info {
+    .item-label {
       flex: 1;
-    }
-
-    .item-name {
+      line-height: 1.4;
       font-weight: 600;
-      font-size: 0.93rem;
-      color: var(--text-main);
+      color: var(--navy-900);
     }
 
-    .item-price {
-      font-size: 0.83rem;
-      color: var(--primary);
+    .item-sub {
+      display: block;
+      font-size: 0.81rem;
+      color: var(--navy-700);
       font-weight: 700;
-      margin-top: 2px;
+      margin-top: 1px;
     }
 
-    /* Stepper */
+    /* Quantity Stepper */
     .stepper {
       display: flex;
       align-items: center;
@@ -377,69 +601,83 @@
       flex-shrink: 0;
     }
 
-    .step-btn {
+    .btn-step {
       width: 32px;
       height: 32px;
-      border-radius: 8px;
+      border-radius: 7px;
       border: 1px solid #cbd5e1;
-      background: #f8fafc;
-      font-size: 1.1rem;
+      background: #ffffff;
+      font-size: 1.05rem;
       font-weight: 700;
-      color: var(--text-main);
+      color: var(--navy-900);
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
+      transition: background 0.12s;
     }
 
-    .step-btn:active {
-      background: #e2e8f0;
+    .btn-step:hover {
+      background: var(--slate-100);
     }
 
-    .step-btn.plus {
-      background: var(--primary-light);
-      border-color: #bfdbfe;
-      color: var(--primary);
+    .btn-step.plus {
+      background: var(--navy-900);
+      border-color: var(--navy-900);
+      color: #ffffff;
     }
 
-    .qty-val {
-      min-width: 26px;
+    .btn-step.plus:hover {
+      background: var(--navy-700);
+    }
+
+    .qty-num {
+      min-width: 28px;
       text-align: center;
-      font-weight: 700;
+      font-weight: 800;
       font-size: 0.95rem;
+      color: var(--navy-900);
     }
 
-    /* Selected Summary Preview */
-    .summary-box {
-      background: #f8fafc;
-      border: 1px dashed #94a3b8;
+    /* Live Order Summary Box */
+    .preview-box {
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
       border-radius: 10px;
-      padding: 12px 14px;
+      padding: 13px 14px;
       margin-top: 14px;
-      font-size: 0.88rem;
+      font-size: 0.86rem;
     }
 
-    .summary-box-title {
+    .preview-title {
       font-weight: 700;
       margin-bottom: 6px;
-      color: var(--text-main);
+      color: var(--navy-900);
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
 
-    .summary-empty {
-      color: var(--text-sub);
-      font-size: 0.85rem;
+    .preview-empty {
+      color: var(--slate-600);
+      font-size: 0.83rem;
     }
 
-    .summary-line {
+    .preview-row {
       display: flex;
       justify-content: space-between;
       padding: 3px 0;
-      color: var(--text-sub);
+      color: var(--slate-600);
+      border-bottom: 1px dashed var(--slate-200);
+    }
+
+    .preview-row:last-child {
+      border-bottom: none;
     }
 
     /* FAQ */
     details.faq-item {
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid var(--slate-200);
       padding: 12px 0;
     }
 
@@ -449,22 +687,26 @@
 
     details.faq-item summary {
       font-weight: 700;
-      font-size: 0.94rem;
+      font-size: 0.92rem;
+      color: var(--navy-900);
       cursor: pointer;
     }
 
     details.faq-item p {
       margin-top: 6px;
-      font-size: 0.88rem;
-      color: var(--text-sub);
+      font-size: 0.86rem;
+      color: var(--slate-600);
     }
 
     /* Footer */
     footer {
       text-align: center;
-      color: var(--text-sub);
-      font-size: 0.82rem;
-      padding: 16px;
+      color: var(--slate-600);
+      font-size: 0.8rem;
+      padding: 12px 16px 24px;
+      border-top: 1px solid var(--slate-200);
+      max-width: 760px;
+      margin: 0 auto;
     }
 
     /* Sticky Bottom Bar */
@@ -474,9 +716,9 @@
       left: 0;
       right: 0;
       background: #ffffff;
-      border-top: 1px solid var(--border);
-      box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.08);
-      padding: 10px 16px;
+      border-top: 1px solid var(--slate-200);
+      box-shadow: 0 -4px 18px rgba(15, 23, 42, 0.08);
+      padding: 10px 14px;
       z-index: 60;
     }
 
@@ -489,40 +731,47 @@
       gap: 12px;
     }
 
-    .total-block {
+    .total-info {
       display: flex;
       flex-direction: column;
     }
 
-    .total-label {
+    .total-hint {
       font-size: 0.76rem;
-      color: var(--text-sub);
+      font-weight: 600;
+      color: var(--slate-600);
     }
 
-    .total-amount {
-      font-size: 1.25rem;
+    .total-hint.free {
+      color: #15803d;
+    }
+
+    .total-val {
+      font-size: 1.22rem;
       font-weight: 800;
-      color: var(--primary);
+      color: var(--navy-900);
     }
 
-    .btn-whatsapp {
+    .btn-submit {
       background: var(--whatsapp);
       color: #ffffff;
       border: none;
-      border-radius: 12px;
       padding: 12px 20px;
-      font-size: 0.98rem;
-      font-weight: 800;
+      border-radius: 10px;
+      font-size: 0.94rem;
+      font-weight: 700;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.35);
-      transition: background 0.2s;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 3px 10px rgba(22, 163, 74, 0.25);
+      flex-shrink: 0;
+      transition: background 0.15s;
     }
 
-    .btn-whatsapp:hover {
-      background: var(--whatsapp-dark);
+    .btn-submit:hover {
+      background: var(--whatsapp-hover);
     }
   </style>
 </head>
@@ -531,98 +780,249 @@
   <!-- Top Navigation -->
   <nav class="navbar">
     <div class="navbar-inner">
-      <a href="#" class="brand">🧺 俊傑洗衣</a>
+      <a href="#" class="brand">
+        <span class="brand-mark">
+          <svg class="icon" viewBox="0 0 24 24">
+            <rect x="3" y="2" width="18" height="20" rx="2" />
+            <circle cx="12" cy="13" r="5" />
+            <line x1="7" y1="6" x2="7.01" y2="6" />
+            <line x1="11" y1="6" x2="11.01" y2="6" />
+          </svg>
+        </span>
+        <span class="brand-text">
+          <span class="brand-zh">俊傑洗衣</span>
+          <span class="brand-en">CHUN KIT LAUNDRY</span>
+        </span>
+      </a>
       <div class="nav-links">
-        <a href="#delivery-rules">收送須知</a>
-        <a href="#order-form">價目及落單</a>
+        <a href="#workflow">服務流程</a>
+        <a href="#rules">門市及收送</a>
+        <a href="#booking">價目及預約</a>
         <a href="#faq">常見問題</a>
       </div>
     </div>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- Hero Banner -->
   <header class="hero">
     <div class="hero-inner">
-      <span class="badge">✨ 街坊信賴・一人一機獨立清洗</span>
-      <h1>俊傑洗衣 專業洗衣及乾洗收送</h1>
-      <p>提供每日磅洗、冷氣被羽絨被清洗、西裝大褸乾洗及上門收送服務。高溫殺菌烘乾，潔淨衛生，網上點選即透過 WhatsApp 快捷預約。</p>
+      <div class="hero-eyebrow">
+        <svg class="icon icon-sm" viewBox="0 0 24 24">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+        </svg>
+        <span>一人一機獨立洗烘・專業商用洗滌標準</span>
+      </div>
+      <h1>俊傑洗衣 專業洗滌及上門收送</h1>
+      <p>提供每日磅洗、冷氣被羽絨被清洗、西裝大褸乾洗及定時上門收送服務。獨立機槽高溫殺菌烘乾，透明定價，即時線上預約。</p>
       <div class="hero-actions">
-        <a href="#order-form" class="btn-hero-primary">立即計算價錢及預約</a>
-        <a href="#delivery-rules" class="btn-hero-secondary">查看收送及付款說明</a>
+        <a href="#booking" class="btn-hero-primary">
+          <svg class="icon icon-sm" viewBox="0 0 24 24">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+            <line x1="16" y1="2" x2="16" y2="6" />
+            <line x1="8" y1="2" x2="8" y2="6" />
+            <line x1="3" y1="10" x2="21" y2="10" />
+          </svg>
+          立即計算費用及預約
+        </a>
+        <a href="#rules" class="btn-hero-secondary">
+          <svg class="icon icon-sm" viewBox="0 0 24 24">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+            <circle cx="12" cy="10" r="3" />
+          </svg>
+          查看門市及收送細則
+        </a>
       </div>
     </div>
   </header>
 
   <main class="container">
-    <!-- 4 Key Highlights -->
-    <section class="features">
-      <div class="feature-card">
-        <div class="feature-icon">🧼</div>
-        <div class="feature-title">一人一機清洗</div>
-        <div class="feature-desc">絕不混洗，貼身衣物更安心</div>
+    <!-- 4 Core Hygiene & Service Standards -->
+    <section class="standards-grid">
+      <div class="standard-card">
+        <div class="standard-icon">
+          <svg class="icon" viewBox="0 0 24 24">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            <polyline points="9 12 11 14 15 10" />
+          </svg>
+        </div>
+        <div class="standard-title">一人一機獨立洗</div>
+        <div class="standard-desc">絕不與其他客戶衣物混洗，保障個人衛生</div>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon">🔥</div>
-        <div class="feature-title">高溫殺菌烘乾</div>
-        <div class="feature-desc">徹底除蟎去味，摺疊整齊</div>
+
+      <div class="standard-card">
+        <div class="standard-icon">
+          <svg class="icon" viewBox="0 0 24 24">
+            <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+          </svg>
+        </div>
+        <div class="standard-title">高溫殺菌烘乾</div>
+        <div class="standard-desc">商用級烘乾除蟎去味，專人整齊摺疊</div>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon">🚚</div>
-        <div class="feature-title">彈性上門收送</div>
-        <div class="feature-desc">早午晚三個時段任選</div>
+
+      <div class="standard-card">
+        <div class="standard-icon">
+          <svg class="icon" viewBox="0 0 24 24">
+            <rect x="1" y="3" width="15" height="13" rx="1" />
+            <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
+            <circle cx="5.5" cy="18.5" r="2.5" />
+            <circle cx="18.5" cy="18.5" r="2.5" />
+          </svg>
+        </div>
+        <div class="standard-title">早午晚定時收送</div>
+        <div class="standard-desc">三個彈性時段上門收件及送回府上</div>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon">💳</div>
-        <div class="feature-title">多元電子支付</div>
-        <div class="feature-desc">支援 FPS / PayMe / AlipayHK</div>
+
+      <div class="standard-card">
+        <div class="standard-icon">
+          <svg class="icon" viewBox="0 0 24 24">
+            <rect x="2" y="5" width="20" height="14" rx="2" />
+            <line x1="2" y1="10" x2="22" y2="10" />
+          </svg>
+        </div>
+        <div class="standard-title">多元電子支付</div>
+        <div class="standard-desc">支援 FPS 轉數快、PayMe、AlipayHK 及現金</div>
       </div>
     </section>
 
-    <!-- Delivery & Shop Rules -->
-    <section class="card" id="delivery-rules">
-      <h2 class="section-title">📋 上門收送及營業須知</h2>
+    <!-- Service Workflow -->
+    <section class="card" id="workflow">
+      <div class="section-header">
+        <h2 class="section-title">
+          <svg class="icon" viewBox="0 0 24 24">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+          </svg>
+          標準收送服務流程
+        </h2>
+        <span class="section-tag">WORKFLOW</span>
+      </div>
+      <div class="workflow-grid">
+        <div class="workflow-step">
+          <div class="workflow-num">STEP 01</div>
+          <div class="workflow-title">線上預約時段</div>
+          <div class="workflow-desc">填寫聯絡地址及期望收件時段，透過 WhatsApp 發送訂單。</div>
+        </div>
+        <div class="workflow-step">
+          <div class="workflow-num">STEP 02</div>
+          <div class="workflow-title">上門過磅核實</div>
+          <div class="workflow-desc">專員按時上門收件，磅洗項目以電子磅實際過磅確認金額。</div>
+        </div>
+        <div class="workflow-step">
+          <div class="workflow-num">STEP 03</div>
+          <div class="workflow-title">獨立機槽洗烘</div>
+          <div class="workflow-desc">按衣物材質分類處理，一人一機清洗及高溫殺菌烘乾。</div>
+        </div>
+        <div class="workflow-step">
+          <div class="workflow-num">STEP 04</div>
+          <div class="workflow-title">整齊包裝送回</div>
+          <div class="workflow-desc">完成後通知送貨時間，整齊摺疊或掛裝送回指定地址。</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Storefront & Delivery Rules -->
+    <section class="card" id="rules">
+      <div class="section-header">
+        <h2 class="section-title">
+          <svg class="icon" viewBox="0 0 24 24">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+            <polyline points="9 22 9 12 15 12 15 22" />
+          </svg>
+          實體門市及上門收送須知
+        </h2>
+        <span class="section-tag">SERVICE INFO</span>
+      </div>
+
       <div class="info-grid">
         <div class="info-box">
-          <strong>🚚 上門收送收費標準</strong>
-          同區屋苑單次消費滿 <b>HK$120 免費上門收送</b>（未滿 HK$120 需加收 HK$25 運輸費）。偏遠或跨區地址請先 WhatsApp 查詢。
+          <div class="info-box-head">
+            <svg class="icon icon-sm" viewBox="0 0 24 24">
+              <rect x="1" y="3" width="15" height="13" rx="1" />
+              <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
+              <circle cx="5.5" cy="18.5" r="2.5" />
+              <circle cx="18.5" cy="18.5" r="2.5" />
+            </svg>
+            <span>上門收送收費標準</span>
+          </div>
+          同區屋苑單次消費滿 <b>HK$120 免費上門收送</b>（未滿 HK$120 需加收 HK$25 運輸費）。跨區或偏遠地址請先 WhatsApp 查詢。
         </div>
+
         <div class="info-box">
-          <strong>⏰ 營業時間及收送時段</strong>
-          每日 10:00 – 21:00 營業。上門收送設上午、下午及晚間三個時段，請提前最少 2 小時預約。
+          <div class="info-box-head">
+            <svg class="icon icon-sm" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="12 6 12 12 16 14" />
+            </svg>
+            <span>收送預約時段</span>
+          </div>
+          上門收送設上午（10:00–13:00）、下午（14:00–18:00）及晚間（19:00–21:00）三個時段，請提前最少 2 小時預約。
         </div>
+
         <div class="info-box">
-          <strong>⚖️ 磅洗計算方式</strong>
-          磅洗以本店電子磅實際過磅為準，首 6 磅 HK$60，其後每磅 HK$8。送出訂單後師傅上門收衫時會核實重量。
+          <div class="info-box-head">
+            <svg class="icon icon-sm" viewBox="0 0 24 24">
+              <path d="M12 3v18M5 8h14M5 16h14" />
+            </svg>
+            <span>磅洗過磅準則</span>
+          </div>
+          網頁顯示之磅洗金額為初步預算，實際收費以收件過磅為準：首 6 磅 HK$60，其後每磅 HK$8。
         </div>
+
         <div class="info-box">
-          <strong>💰 付款方式</strong>
-          收衫確認實際重量及金額後，可使用 <b>FPS 轉數快、PayMe、AlipayHK 或現金</b>付款。
+          <div class="info-box-head">
+            <svg class="icon icon-sm" viewBox="0 0 24 24">
+              <rect x="2" y="5" width="20" height="14" rx="2" />
+              <line x1="2" y1="10" x2="22" y2="10" />
+            </svg>
+            <span>付款及收據安排</span>
+          </div>
+          確認實際重量及金額後，可使用 <b>FPS 轉數快、PayMe、AlipayHK 或現金</b>付款，並提供電子收據。
+        </div>
+      </div>
+
+      <!-- Physical Shop Details (Editable) -->
+      <div class="shop-strip">
+        <div class="shop-strip-row">
+          <strong>門市地址：</strong>
+          <span>九龍觀塘區（歡迎親臨門市交收或預約上門收送，可在此修改為詳細鋪位地址）</span>
+        </div>
+        <div class="shop-strip-row">
+          <strong>營業時間：</strong>
+          <span>星期一至日 10:00 – 21:00（公眾假期照常營業）</span>
+        </div>
+        <div class="shop-strip-row">
+          <strong>查詢熱線：</strong>
+          <span>WhatsApp / 電話：9789 1291</span>
         </div>
       </div>
     </section>
 
-    <!-- Step 1: Contact Details -->
-    <section class="card" id="order-form">
-      <h2 class="section-title"><span class="section-num">1</span> 聯絡與上門收送資料</h2>
+    <!-- Section 1: Customer Info -->
+    <section class="card" id="booking">
+      <div class="section-header">
+        <h2 class="section-title"><span class="step-badge">1</span> 聯絡與上門收送資料</h2>
+        <span class="section-tag">STEP 1</span>
+      </div>
 
-      <div class="form-group">
-        <label for="custName">顧客姓名 / 稱謂 <span class="required">*</span></label>
-        <input type="text" id="custName" class="form-control" placeholder="例如：陳先生 / 李小姐" />
+      <div class="form-grid" style="margin-bottom: 12px;">
+        <div class="form-group">
+          <label for="custName">顧客姓名 / 稱謂</label>
+          <input type="text" id="custName" placeholder="例如：陳先生" />
+        </div>
+
+        <div class="form-group">
+          <label for="custPhone">聯絡電話 <span class="req">*</span></label>
+          <input type="tel" id="custPhone" placeholder="例如：91234567" />
+        </div>
       </div>
 
       <div class="form-group">
-        <label for="custPhone">聯絡電話 <span class="required">*</span></label>
-        <input type="tel" id="custPhone" class="form-control" placeholder="例如：91234567" />
+        <label for="custAddress">收送地址（連大廈及室號）<span class="req">*</span></label>
+        <input type="text" id="custAddress" placeholder="例如：觀塘水寧樓 X 室" />
       </div>
 
-      <div class="form-group">
-        <label for="custAddress">收送地址 (連屋苑、大廈及室號) <span class="required">*</span></label>
-        <input type="text" id="custAddress" class="form-control" placeholder="例如：觀塘水寧樓 X 室" />
-      </div>
-
-      <div class="form-group" style="margin-bottom:0;">
-        <label for="pickupSlot">期望上門時段</label>
-        <select id="pickupSlot" class="form-control">
+      <div class="form-group" style="margin-bottom: 0;">
+        <label for="pickupTime">期望上門時段</label>
+        <select id="pickupTime">
           <option value="上午時段 (10:00 - 13:00)">上午時段 (10:00 - 13:00)</option>
           <option value="下午時段 (14:00 - 18:00)">下午時段 (14:00 - 18:00)</option>
           <option value="晚間時段 (19:00 - 21:00)">晚間時段 (19:00 - 21:00)</option>
@@ -630,355 +1030,438 @@
       </div>
     </section>
 
-    <!-- Step 2: Services -->
+    <!-- Section 2: Service & Price List -->
     <section class="card">
-      <h2 class="section-title"><span class="section-num">2</span> 選擇洗滌服務及計算預估金額</h2>
+      <div class="section-header">
+        <h2 class="section-title"><span class="step-badge">2</span> 選擇洗滌服務及價目表</h2>
+        <span class="section-tag">STEP 2</span>
+      </div>
 
-      <!-- Category 1: Laundry -->
-      <details class="service-cat" open>
-        <summary>👕 磅洗服務 (Laundry)</summary>
-        <div class="cat-note">💡 提示：如選擇磅洗，請輸入預計總磅數（最少 6 磅起計）。</div>
-        <div class="item-list">
-          <div class="service-item" data-type="pound">
-            <div class="item-info">
-              <div class="item-name">磅洗 (首6磅 $60，其後每磅 $8)</div>
-              <div class="item-price">請按「+」選擇預計磅數</div>
+      <!-- 磅洗服務 -->
+      <details class="service-group" open>
+        <summary>
+          <span class="summary-left">
+            <svg class="icon icon-sm" viewBox="0 0 24 24">
+              <rect x="3" y="2" width="18" height="20" rx="2" />
+              <circle cx="12" cy="13" r="5" />
+            </svg>
+            <span>磅洗服務 <span class="summary-en">LAUNDRY BY WEIGHT</span></span>
+          </span>
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
+        </summary>
+        <div class="cat-tip">
+          <svg class="icon icon-sm" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" />
+            <line x1="12" y1="16" x2="12" y2="12" />
+            <line x1="12" y1="8" x2="12.01" y2="8" />
+          </svg>
+          <span>提示：磅洗首 6 磅 $60 起計，按「＋」可自動從 6 磅開始累加。</span>
+        </div>
+        <div class="details-content">
+          <div class="item-row">
+            <div class="item-label">
+              磅洗（首 6 磅 $60，其後每磅 $8）
+              <span class="item-sub">按「＋」選擇預計磅數</span>
             </div>
             <div class="stepper">
-              <button type="button" class="step-btn" onclick="changePound(-1)">−</button>
-              <span class="qty-val" id="poundQty">0</span>
-              <button type="button" class="step-btn plus" onclick="changePound(1)">+</button>
+              <button type="button" class="btn-step" onclick="stepPounds(-1)">−</button>
+              <span class="qty-num" id="washPoundsDisplay">0</span>
+              <button type="button" class="btn-step plus" onclick="stepPounds(1)">+</button>
             </div>
           </div>
 
-          <div class="service-item" data-name="普通被單 / 床笠" data-price="0">
-            <div class="item-info">
-              <div class="item-name">普通被單 / 床笠 (連磅洗免加收費)</div>
-              <div class="item-price">HK$0 / 件</div>
+          <div class="item-row" data-price="0" data-name="普通被單/床笠">
+            <div class="item-label">
+              普通被單 / 床笠
+              <span class="item-sub">連磅洗免加收費</span>
             </div>
             <div class="stepper">
-              <button type="button" class="step-btn" onclick="changeQty(this, -1)">−</button>
-              <span class="qty-val">0</span>
-              <button type="button" class="step-btn plus" onclick="changeQty(this, 1)">+</button>
+              <button type="button" class="btn-step" onclick="stepItem(this, -1)">−</button>
+              <span class="qty-num">0</span>
+              <button type="button" class="btn-step plus" onclick="stepItem(this, 1)">+</button>
             </div>
           </div>
 
-          <div class="service-item" data-name="夾棉被袋 / 床墊" data-price="35">
-            <div class="item-info">
-              <div class="item-name">夾棉被袋 / 床墊</div>
-              <div class="item-price">+HK$35 / 件</div>
+          <div class="item-row" data-price="35" data-name="夾棉被袋/床墊">
+            <div class="item-label">
+              夾棉被袋 / 床墊
+              <span class="item-sub">+$35 / 件</span>
             </div>
             <div class="stepper">
-              <button type="button" class="step-btn" onclick="changeQty(this, -1)">−</button>
-              <span class="qty-val">0</span>
-              <button type="button" class="step-btn plus" onclick="changeQty(this, 1)">+</button>
+              <button type="button" class="btn-step" onclick="stepItem(this, -1)">−</button>
+              <span class="qty-num">0</span>
+              <button type="button" class="btn-step plus" onclick="stepItem(this, 1)">+</button>
             </div>
           </div>
         </div>
       </details>
 
-      <!-- Category 2: Bedding -->
-      <details class="service-cat">
-        <summary>🛌 洗被服務 (Bedding)</summary>
-        <div class="item-list">
-          <div class="service-item" data-name="冷氣被/珊瑚被 (單人)" data-price="85">
-            <div class="item-info"><div class="item-name">冷氣被/珊瑚被 (單人)</div><div class="item-price">HK$85</div></div>
-            <div class="stepper"><button type="button" class="step-btn" onclick="changeQty(this, -1)">−</button><span class="qty-val">0</span><button type="button" class="step-btn plus" onclick="changeQty(this, 1)">+</button></div>
+      <!-- 洗被服務 -->
+      <details class="service-group">
+        <summary>
+          <span class="summary-left">
+            <svg class="icon icon-sm" viewBox="0 0 24 24">
+              <path d="M2 4v16M2 8h18a2 2 0 0 1 2 2v10M2 17h20M6 8v9" />
+            </svg>
+            <span>洗被服務 <span class="summary-en">BEDDING & DUVETS</span></span>
+          </span>
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
+        </summary>
+        <div class="details-content">
+          <div class="item-row" data-price="85" data-name="冷氣/珊瑚被(單人)">
+            <div class="item-label">冷氣被 / 珊瑚被（單人）<span class="item-sub">$85</span></div>
+            <div class="stepper"><button type="button" class="btn-step" onclick="stepItem(this, -1)">−</button><span class="qty-num">0</span><button type="button" class="btn-step plus" onclick="stepItem(this, 1)">+</button></div>
           </div>
-          <div class="service-item" data-name="冷氣被/珊瑚被 (雙人)" data-price="95">
-            <div class="item-info"><div class="item-name">冷氣被/珊瑚被 (雙人)</div><div class="item-price">HK$95</div></div>
-            <div class="stepper"><button type="button" class="step-btn" onclick="changeQty(this, -1)">−</button><span class="qty-val">0</span><button type="button" class="step-btn plus" onclick="changeQty(this, 1)">+</button></div>
+          <div class="item-row" data-price="95" data-name="冷氣/珊瑚被(雙人)">
+            <div class="item-label">冷氣被 / 珊瑚被（雙人）<span class="item-sub">$95</span></div>
+            <div class="stepper"><button type="button" class="btn-step" onclick="stepItem(this, -1)">−</button><span class="qty-num">0</span><button type="button" class="btn-step plus" onclick="stepItem(this, 1)">+</button></div>
           </div>
-          <div class="service-item" data-name="冷氣被/珊瑚被 (加大)" data-price="110">
-            <div class="item-info"><div class="item-name">冷氣被/珊瑚被 (加大)</div><div class="item-price">HK$110</div></div>
-            <div class="stepper"><button type="button" class="step-btn" onclick="changeQty(this, -1)">−</button><span class="qty-val">0</span><button type="button" class="step-btn plus" onclick="changeQty(this, 1)">+</button></div>
+          <div class="item-row" data-price="110" data-name="冷氣/珊瑚被(加大)">
+            <div class="item-label">冷氣被 / 珊瑚被（加大）<span class="item-sub">$110</span></div>
+            <div class="stepper"><button type="button" class="btn-step" onclick="stepItem(this, -1)">−</button><span class="qty-num">0</span><button type="button" class="btn-step plus" onclick="stepItem(this, 1)">+</button></div>
           </div>
-          <div class="service-item" data-name="羽絨被/大豆被/羊毛被 (單人)" data-price="165">
-            <div class="item-info"><div class="item-name">羽絨被/大豆被/羊毛被 (單人)</div><div class="item-price">HK$165</div></div>
-            <div class="stepper"><button type="button" class="step-btn" onclick="changeQty(this, -1)">−</button><span class="qty-val">0</span><button type="button" class="step-btn plus" onclick="changeQty(this, 1)">+</button></div>
+          <div class="item-row" data-price="165" data-name="羽絨被/大豆被(單人)">
+            <div class="item-label">羽絨被 / 大豆被 / 羊毛被（單人）<span class="item-sub">$165</span></div>
+            <div class="stepper"><button type="button" class="btn-step" onclick="stepItem(this, -1)">−</button><span class="qty-num">0</span><button type="button" class="btn-step plus" onclick="stepItem(this, 1)">+</button></div>
           </div>
-          <div class="service-item" data-name="羽絨被/大豆被/羊毛被 (雙人)" data-price="190">
-            <div class="item-info"><div class="item-name">羽絨被/大豆被/羊毛被 (雙人)</div><div class="item-price">HK$190</div></div>
-            <div class="stepper"><button type="button" class="step-btn" onclick="changeQty(this, -1)">−</button><span class="qty-val">0</span><button type="button" class="step-btn plus" onclick="changeQty(this, 1)">+</button></div>
+          <div class="item-row" data-price="190" data-name="羽絨被/大豆被(雙人)">
+            <div class="item-label">羽絨被 / 大豆被 / 羊毛被（雙人）<span class="item-sub">$190</span></div>
+            <div class="stepper"><button type="button" class="btn-step" onclick="stepItem(this, -1)">−</button><span class="qty-num">0</span><button type="button" class="btn-step plus" onclick="stepItem(this, 1)">+</button></div>
           </div>
-          <div class="service-item" data-name="羽絨被/大豆被/羊毛被 (加大)" data-price="210">
-            <div class="item-info"><div class="item-name">羽絨被/大豆被/羊毛被 (加大)</div><div class="item-price">HK$210</div></div>
-            <div class="stepper"><button type="button" class="step-btn" onclick="changeQty(this, -1)">−</button><span class="qty-val">0</span><button type="button" class="step-btn plus" onclick="changeQty(this, 1)">+</button></div>
+          <div class="item-row" data-price="210" data-name="羽絨被/大豆被(加大)">
+            <div class="item-label">羽絨被 / 大豆被 / 羊毛被（加大）<span class="item-sub">$210</span></div>
+            <div class="stepper"><button type="button" class="btn-step" onclick="stepItem(this, -1)">−</button><span class="qty-num">0</span><button type="button" class="btn-step plus" onclick="stepItem(this, 1)">+</button></div>
           </div>
-          <div class="service-item" data-name="羊毛氈 (單人)" data-price="120">
-            <div class="item-info"><div class="item-name">羊毛氈 (單人)</div><div class="item-price">HK$120</div></div>
-            <div class="stepper"><button type="button" class="step-btn" onclick="changeQty(this, -1)">−</button><span class="qty-val">0</span><button type="button" class="step-btn plus" onclick="changeQty(this, 1)">+</button></div>
+          <div class="item-row" data-price="120" data-name="羊毛氈(單人)">
+            <div class="item-label">羊毛氈（單人）<span class="item-sub">$120</span></div>
+            <div class="stepper"><button type="button" class="btn-step" onclick="stepItem(this, -1)">−</button><span class="qty-num">0</span><button type="button" class="btn-step plus" onclick="stepItem(this, 1)">+</button></div>
           </div>
-          <div class="service-item" data-name="羊毛氈 (雙人)" data-price="138">
-            <div class="item-info"><div class="item-name">羊毛氈 (雙人)</div><div class="item-price">HK$138</div></div>
-            <div class="stepper"><button type="button" class="step-btn" onclick="changeQty(this, -1)">−</button><span class="qty-val">0</span><button type="button" class="step-btn plus" onclick="changeQty(this, 1)">+</button></div>
+          <div class="item-row" data-price="138" data-name="羊毛氈(雙人)">
+            <div class="item-label">羊毛氈（雙人）<span class="item-sub">$138</span></div>
+            <div class="stepper"><button type="button" class="btn-step" onclick="stepItem(this, -1)">−</button><span class="qty-num">0</span><button type="button" class="btn-step plus" onclick="stepItem(this, 1)">+</button></div>
           </div>
-          <div class="service-item" data-name="床墊/毛毯/毛巾被 (單人/薄)" data-price="70">
-            <div class="item-info"><div class="item-name">床墊/毛毯/毛巾被 (單人/薄)</div><div class="item-price">HK$70</div></div>
-            <div class="stepper"><button type="button" class="step-btn" onclick="changeQty(this, -1)">−</button><span class="qty-val">0</span><button type="button" class="step-btn plus" onclick="changeQty(this, 1)">+</button></div>
+          <div class="item-row" data-price="70" data-name="床墊/毛毯(單人/薄)">
+            <div class="item-label">床墊 / 毛毯 / 毛巾被（單人 / 薄）<span class="item-sub">$70</span></div>
+            <div class="stepper"><button type="button" class="btn-step" onclick="stepItem(this, -1)">−</button><span class="qty-num">0</span><button type="button" class="btn-step plus" onclick="stepItem(this, 1)">+</button></div>
           </div>
-          <div class="service-item" data-name="床墊/毛毯/毛巾被 (雙人/厚)" data-price="80">
-            <div class="item-info"><div class="item-name">床墊/毛毯/毛巾被 (雙人/厚)</div><div class="item-price">HK$80</div></div>
-            <div class="stepper"><button type="button" class="step-btn" onclick="changeQty(this, -1)">−</button><span class="qty-val">0</span><button type="button" class="step-btn plus" onclick="changeQty(this, 1)">+</button></div>
+          <div class="item-row" data-price="80" data-name="床墊/毛毯(雙人/厚)">
+            <div class="item-label">床墊 / 毛毯 / 毛巾被（雙人 / 厚）<span class="item-sub">$80</span></div>
+            <div class="stepper"><button type="button" class="btn-step" onclick="stepItem(this, -1)">−</button><span class="qty-num">0</span><button type="button" class="btn-step plus" onclick="stepItem(this, 1)">+</button></div>
           </div>
-          <div class="service-item" data-name="睡袋 (單人)" data-price="70">
-            <div class="item-info"><div class="item-name">睡袋 (單人)</div><div class="item-price">HK$70</div></div>
-            <div class="stepper"><button type="button" class="step-btn" onclick="changeQty(this, -1)">−</button><span class="qty-val">0</span><button type="button" class="step-btn plus" onclick="changeQty(this, 1)">+</button></div>
+          <div class="item-row" data-price="70" data-name="睡袋(單人)">
+            <div class="item-label">睡袋（單人）<span class="item-sub">$70</span></div>
+            <div class="stepper"><button type="button" class="btn-step" onclick="stepItem(this, -1)">−</button><span class="qty-num">0</span><button type="button" class="btn-step plus" onclick="stepItem(this, 1)">+</button></div>
           </div>
-          <div class="service-item" data-name="睡袋 (雙人)" data-price="80">
-            <div class="item-info"><div class="item-name">睡袋 (雙人)</div><div class="item-price">HK$80</div></div>
-            <div class="stepper"><button type="button" class="step-btn" onclick="changeQty(this, -1)">−</button><span class="qty-val">0</span><button type="button" class="step-btn plus" onclick="changeQty(this, 1)">+</button></div>
-          </div>
-        </div>
-      </details>
-
-      <!-- Category 3: Jackets -->
-      <details class="service-cat">
-        <summary>🧥 水洗外套 (Jackets)</summary>
-        <div class="item-list">
-          <div class="service-item" data-name="羽絨褸/棉褸 (背心/短)" data-price="80">
-            <div class="item-info"><div class="item-name">羽絨褸/棉褸 (背心/短)</div><div class="item-price">HK$80</div></div>
-            <div class="stepper"><button type="button" class="step-btn" onclick="changeQty(this, -1)">−</button><span class="qty-val">0</span><button type="button" class="step-btn plus" onclick="changeQty(this, 1)">+</button></div>
-          </div>
-          <div class="service-item" data-name="羽絨褸/棉褸 (中)" data-price="90">
-            <div class="item-info"><div class="item-name">羽絨褸/棉褸 (中)</div><div class="item-price">HK$90</div></div>
-            <div class="stepper"><button type="button" class="step-btn" onclick="changeQty(this, -1)">−</button><span class="qty-val">0</span><button type="button" class="step-btn plus" onclick="changeQty(this, 1)">+</button></div>
-          </div>
-          <div class="service-item" data-name="羽絨褸/棉褸 (長)" data-price="120">
-            <div class="item-info"><div class="item-name">羽絨褸/棉褸 (長)</div><div class="item-price">HK$120</div></div>
-            <div class="stepper"><button type="button" class="step-btn" onclick="changeQty(this, -1)">−</button><span class="qty-val">0</span><button type="button" class="step-btn plus" onclick="changeQty(this, 1)">+</button></div>
+          <div class="item-row" data-price="80" data-name="睡袋(雙人)">
+            <div class="item-label">睡袋（雙人）<span class="item-sub">$80</span></div>
+            <div class="stepper"><button type="button" class="btn-step" onclick="stepItem(this, -1)">−</button><span class="qty-num">0</span><button type="button" class="btn-step plus" onclick="stepItem(this, 1)">+</button></div>
           </div>
         </div>
       </details>
 
-      <!-- Category 4: Dry Clean -->
-      <details class="service-cat">
-        <summary>👔 專業乾洗 (Dry Clean)</summary>
-        <div class="cat-note">💡 註：乾洗價格為基本起步價，如衣物有特殊材質或嚴重污漬將另行報價確認。</div>
-        <div class="item-list">
-          <div class="service-item" data-name="西裝 (兩件)" data-price="90">
-            <div class="item-info"><div class="item-name">西裝 (兩件)</div><div class="item-price">HK$90 起</div></div>
-            <div class="stepper"><button type="button" class="step-btn" onclick="changeQty(this, -1)">−</button><span class="qty-val">0</span><button type="button" class="step-btn plus" onclick="changeQty(this, 1)">+</button></div>
+      <!-- 水洗單件外套 -->
+      <details class="service-group">
+        <summary>
+          <span class="summary-left">
+            <svg class="icon icon-sm" viewBox="0 0 24 24">
+              <path d="M20.38 3.46L16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z" />
+            </svg>
+            <span>水洗外套 <span class="summary-en">WET WASH JACKETS</span></span>
+          </span>
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
+        </summary>
+        <div class="details-content">
+          <div class="item-row" data-price="80" data-name="水洗羽絨/棉褸(短)">
+            <div class="item-label">羽絨褸 / 棉褸（背心 / 短）<span class="item-sub">$80</span></div>
+            <div class="stepper"><button type="button" class="btn-step" onclick="stepItem(this, -1)">−</button><span class="qty-num">0</span><button type="button" class="btn-step plus" onclick="stepItem(this, 1)">+</button></div>
           </div>
-          <div class="service-item" data-name="西裝 (三件)" data-price="120">
-            <div class="item-info"><div class="item-name">西裝 (三件)</div><div class="item-price">HK$120 起</div></div>
-            <div class="stepper"><button type="button" class="step-btn" onclick="changeQty(this, -1)">−</button><span class="qty-val">0</span><button type="button" class="step-btn plus" onclick="changeQty(this, 1)">+</button></div>
+          <div class="item-row" data-price="90" data-name="水洗羽絨/棉褸(中)">
+            <div class="item-label">羽絨褸 / 棉褸（中）<span class="item-sub">$90</span></div>
+            <div class="stepper"><button type="button" class="btn-step" onclick="stepItem(this, -1)">−</button><span class="qty-num">0</span><button type="button" class="btn-step plus" onclick="stepItem(this, 1)">+</button></div>
           </div>
-          <div class="service-item" data-name="西裝褸" data-price="65">
-            <div class="item-info"><div class="item-name">西裝褸</div><div class="item-price">HK$65 起</div></div>
-            <div class="stepper"><button type="button" class="step-btn" onclick="changeQty(this, -1)">−</button><span class="qty-val">0</span><button type="button" class="step-btn plus" onclick="changeQty(this, 1)">+</button></div>
+          <div class="item-row" data-price="120" data-name="水洗羽絨/棉褸(長)">
+            <div class="item-label">羽絨褸 / 棉褸（長）<span class="item-sub">$120</span></div>
+            <div class="stepper"><button type="button" class="btn-step" onclick="stepItem(this, -1)">−</button><span class="qty-num">0</span><button type="button" class="btn-step plus" onclick="stepItem(this, 1)">+</button></div>
           </div>
-          <div class="service-item" data-name="西褲/西裙" data-price="30">
-            <div class="item-info"><div class="item-name">西褲/西裙</div><div class="item-price">HK$30 起</div></div>
-            <div class="stepper"><button type="button" class="step-btn" onclick="changeQty(this, -1)">−</button><span class="qty-val">0</span><button type="button" class="step-btn plus" onclick="changeQty(this, 1)">+</button></div>
+        </div>
+      </details>
+
+      <!-- 乾洗服務 -->
+      <details class="service-group">
+        <summary>
+          <span class="summary-left">
+            <svg class="icon icon-sm" viewBox="0 0 24 24">
+              <path d="M12 2L8 6l4 4 4-4-4-4z" />
+              <path d="M6 10l-3 10h18l-3-10" />
+            </svg>
+            <span>專業乾洗 <span class="summary-en">DRY CLEANING</span></span>
+          </span>
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
+        </summary>
+        <div class="cat-tip">
+          <svg class="icon icon-sm" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" />
+            <line x1="12" y1="16" x2="12" y2="12" />
+            <line x1="12" y1="8" x2="12.01" y2="8" />
+          </svg>
+          <span>註：乾洗價格為基本起步價，如衣物屬特殊材質或有嚴重污漬將另行報價確認。</span>
+        </div>
+        <div class="details-content">
+          <div class="item-row" data-price="90" data-name="乾洗西裝(兩件)">
+            <div class="item-label">西裝（兩件）<span class="item-sub">$90 起</span></div>
+            <div class="stepper"><button type="button" class="btn-step" onclick="stepItem(this, -1)">−</button><span class="qty-num">0</span><button type="button" class="btn-step plus" onclick="stepItem(this, 1)">+</button></div>
           </div>
-          <div class="service-item" data-name="恤衫" data-price="30">
-            <div class="item-info"><div class="item-name">恤衫</div><div class="item-price">HK$30 起</div></div>
-            <div class="stepper"><button type="button" class="step-btn" onclick="changeQty(this, -1)">−</button><span class="qty-val">0</span><button type="button" class="step-btn plus" onclick="changeQty(this, 1)">+</button></div>
+          <div class="item-row" data-price="120" data-name="乾洗西裝(三件)">
+            <div class="item-label">西裝（三件）<span class="item-sub">$120 起</span></div>
+            <div class="stepper"><button type="button" class="btn-step" onclick="stepItem(this, -1)">−</button><span class="qty-num">0</span><button type="button" class="btn-step plus" onclick="stepItem(this, 1)">+</button></div>
           </div>
-          <div class="service-item" data-name="西裝背心" data-price="40">
-            <div class="item-info"><div class="item-name">西裝背心</div><div class="item-price">HK$40 起</div></div>
-            <div class="stepper"><button type="button" class="step-btn" onclick="changeQty(this, -1)">−</button><span class="qty-val">0</span><button type="button" class="step-btn plus" onclick="changeQty(this, 1)">+</button></div>
+          <div class="item-row" data-price="65" data-name="乾洗西裝褸">
+            <div class="item-label">西裝褸<span class="item-sub">$65 起</span></div>
+            <div class="stepper"><button type="button" class="btn-step" onclick="stepItem(this, -1)">−</button><span class="qty-num">0</span><button type="button" class="btn-step plus" onclick="stepItem(this, 1)">+</button></div>
           </div>
-          <div class="service-item" data-name="冷衫" data-price="50">
-            <div class="item-info"><div class="item-name">冷衫</div><div class="item-price">HK$50 起</div></div>
-            <div class="stepper"><button type="button" class="step-btn" onclick="changeQty(this, -1)">−</button><span class="qty-val">0</span><button type="button" class="step-btn plus" onclick="changeQty(this, 1)">+</button></div>
+          <div class="item-row" data-price="30" data-name="乾洗西褲/西裙">
+            <div class="item-label">西褲 / 西裙<span class="item-sub">$30 起</span></div>
+            <div class="stepper"><button type="button" class="btn-step" onclick="stepItem(this, -1)">−</button><span class="qty-num">0</span><button type="button" class="btn-step plus" onclick="stepItem(this, 1)">+</button></div>
           </div>
-          <div class="service-item" data-name="各類褸 (短)" data-price="70">
-            <div class="item-info"><div class="item-name">各類褸 (短)</div><div class="item-price">HK$70 起</div></div>
-            <div class="stepper"><button type="button" class="step-btn" onclick="changeQty(this, -1)">−</button><span class="qty-val">0</span><button type="button" class="step-btn plus" onclick="changeQty(this, 1)">+</button></div>
+          <div class="item-row" data-price="30" data-name="乾洗恤衫">
+            <div class="item-label">恤衫<span class="item-sub">$30 起</span></div>
+            <div class="stepper"><button type="button" class="btn-step" onclick="stepItem(this, -1)">−</button><span class="qty-num">0</span><button type="button" class="btn-step plus" onclick="stepItem(this, 1)">+</button></div>
           </div>
-          <div class="service-item" data-name="各類褸 (中)" data-price="80">
-            <div class="item-info"><div class="item-name">各類褸 (中)</div><div class="item-price">HK$80 起</div></div>
-            <div class="stepper"><button type="button" class="step-btn" onclick="changeQty(this, -1)">−</button><span class="qty-val">0</span><button type="button" class="step-btn plus" onclick="changeQty(this, 1)">+</button></div>
+          <div class="item-row" data-price="40" data-name="乾洗西裝背心">
+            <div class="item-label">西裝背心<span class="item-sub">$40 起</span></div>
+            <div class="stepper"><button type="button" class="btn-step" onclick="stepItem(this, -1)">−</button><span class="qty-num">0</span><button type="button" class="btn-step plus" onclick="stepItem(this, 1)">+</button></div>
           </div>
-          <div class="service-item" data-name="各類褸 (長)" data-price="90">
-            <div class="item-info"><div class="item-name">各類褸 (長)</div><div class="item-price">HK$90 起</div></div>
-            <div class="stepper"><button type="button" class="step-btn" onclick="changeQty(this, -1)">−</button><span class="qty-val">0</span><button type="button" class="step-btn plus" onclick="changeQty(this, 1)">+</button></div>
+          <div class="item-row" data-price="50" data-name="乾洗冷衫">
+            <div class="item-label">冷衫<span class="item-sub">$50 起</span></div>
+            <div class="stepper"><button type="button" class="btn-step" onclick="stepItem(this, -1)">−</button><span class="qty-num">0</span><button type="button" class="btn-step plus" onclick="stepItem(this, 1)">+</button></div>
           </div>
-          <div class="service-item" data-name="乾洗羽絨褸 (中)" data-price="100">
-            <div class="item-info"><div class="item-name">羽絨褸 (中)</div><div class="item-price">HK$100 起</div></div>
-            <div class="stepper"><button type="button" class="step-btn" onclick="changeQty(this, -1)">−</button><span class="qty-val">0</span><button type="button" class="step-btn plus" onclick="changeQty(this, 1)">+</button></div>
+          <div class="item-row" data-price="70" data-name="乾洗短褸">
+            <div class="item-label">各類褸（短）<span class="item-sub">$70 起</span></div>
+            <div class="stepper"><button type="button" class="btn-step" onclick="stepItem(this, -1)">−</button><span class="qty-num">0</span><button type="button" class="btn-step plus" onclick="stepItem(this, 1)">+</button></div>
           </div>
-          <div class="service-item" data-name="乾洗羽絨褸 (長)" data-price="110">
-            <div class="item-info"><div class="item-name">羽絨褸 (長)</div><div class="item-price">HK$110 起</div></div>
-            <div class="stepper"><button type="button" class="step-btn" onclick="changeQty(this, -1)">−</button><span class="qty-val">0</span><button type="button" class="step-btn plus" onclick="changeQty(this, 1)">+</button></div>
+          <div class="item-row" data-price="80" data-name="乾洗中褸">
+            <div class="item-label">各類褸（中）<span class="item-sub">$80 起</span></div>
+            <div class="stepper"><button type="button" class="btn-step" onclick="stepItem(this, -1)">−</button><span class="qty-num">0</span><button type="button" class="btn-step plus" onclick="stepItem(this, 1)">+</button></div>
+          </div>
+          <div class="item-row" data-price="90" data-name="乾洗長褸">
+            <div class="item-label">各類褸（長）<span class="item-sub">$90 起</span></div>
+            <div class="stepper"><button type="button" class="btn-step" onclick="stepItem(this, -1)">−</button><span class="qty-num">0</span><button type="button" class="btn-step plus" onclick="stepItem(this, 1)">+</button></div>
+          </div>
+          <div class="item-row" data-price="100" data-name="乾洗羽絨褸(中)">
+            <div class="item-label">羽絨褸（中）<span class="item-sub">$100 起</span></div>
+            <div class="stepper"><button type="button" class="btn-step" onclick="stepItem(this, -1)">−</button><span class="qty-num">0</span><button type="button" class="btn-step plus" onclick="stepItem(this, 1)">+</button></div>
+          </div>
+          <div class="item-row" data-price="110" data-name="乾洗羽絨褸(長)">
+            <div class="item-label">羽絨褸（長）<span class="item-sub">$110 起</span></div>
+            <div class="stepper"><button type="button" class="btn-step" onclick="stepItem(this, -1)">−</button><span class="qty-num">0</span><button type="button" class="btn-step plus" onclick="stepItem(this, 1)">+</button></div>
           </div>
         </div>
       </details>
 
       <!-- Remarks -->
-      <div class="form-group" style="margin-top:14px;">
+      <div class="form-group" style="margin-top: 14px; margin-bottom: 0;">
         <label for="remarks">特別要求 / 備註</label>
-        <input type="text" id="remarks" class="form-control" placeholder="例如：唔要柔順劑、衫領有污漬、到樓下請致電" />
+        <textarea id="remarks" rows="2" placeholder="例如：無需柔順劑、領口有污漬、到達大廈地下請致電"></textarea>
       </div>
 
-      <!-- Live Order Summary -->
-      <div class="summary-box">
-        <div class="summary-box-title">🧾 已選服務明細預覽：</div>
-        <div id="summaryContent" class="summary-empty">尚未選擇任何服務項目（如不確定磅數，亦可直接填寫地址按下方 WhatsApp 預約）</div>
+      <!-- Live Order Preview -->
+      <div class="preview-box">
+        <div class="preview-title">
+          <svg class="icon icon-sm" viewBox="0 0 24 24">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+            <polyline points="14 2 14 8 20 8" />
+            <line x1="16" y1="13" x2="8" y2="13" />
+            <line x1="16" y1="17" x2="8" y2="17" />
+          </svg>
+          <span>已選服務項目即時明細</span>
+        </div>
+        <div id="previewContent" class="preview-empty">尚未點選任何服務項目（如不確定重量，可直接填寫聯絡電話及地址並按下方按鈕預約到場過磅）</div>
       </div>
     </section>
 
-    <!-- FAQ Section -->
+    <!-- FAQ -->
     <section class="card" id="faq">
-      <h2 class="section-title">❓ 常見問題 (FAQ)</h2>
+      <div class="section-header">
+        <h2 class="section-title">
+          <svg class="icon" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" />
+            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+            <line x1="12" y1="17" x2="12.01" y2="17" />
+          </svg>
+          常見問題
+        </h2>
+        <span class="section-tag">FAQ</span>
+      </div>
       <details class="faq-item">
-        <summary>1. 一般磅洗及洗被需要幾多日送回？</summary>
+        <summary>1. 一般磅洗及洗被需要多少個工作天送回？</summary>
         <p>一般日常衣物磅洗約需 1 至 2 個工作天送回；大型羽絨被、羊毛被或專業乾洗衣物則約需 2 至 4 個工作天。</p>
       </details>
       <details class="faq-item">
-        <summary>2. 如果我唔知袋衫有幾多磅，點樣落單？</summary>
-        <p>你可以先在「磅洗」按 6 磅作基本預算，或者直接填寫姓名、電話及地址按 WhatsApp 預約，師傅上門收衫過磅後會即時拍照通知你實際重量及金額。</p>
+        <summary>2. 如未能確定衣物實際磅數，應如何預約？</summary>
+        <p>可先於「磅洗服務」點選 6 磅作初步預算，或直接填寫聯絡電話及地址傳送預約，專員上門收件過磅後會即時核實實際重量及收費。</p>
       </details>
       <details class="faq-item">
-        <summary>3. 褪色衣物或名貴衣物應該點處理？</summary>
-        <p>深色或容易褪色之衣物建議與淺色衣物分開清洗，並於「特別要求 / 備註」欄註明；名貴面料或西裝建議選用專業乾洗服務。</p>
+        <summary>3. 深色易褪色或名貴衣物有何處理建議？</summary>
+        <p>容易褪色之衣物建議與淺色衣物分開包裝，並於「特別要求 / 備註」欄註明；西裝、大褸及名貴面料建議選用專業乾洗服務。</p>
       </details>
     </section>
   </main>
 
   <footer>
-    <p>© 2026 俊傑洗衣 | 每日 10:00 – 21:00 | 觀塘及鄰近地區上門收送</p>
+    <p>© 2026 俊傑洗衣 CHUN KIT LAUNDRY | 每日 10:00 – 21:00 | 查詢熱線：9789 1291</p>
   </footer>
 
-  <!-- Sticky Bottom Checkout Bar -->
+  <!-- Sticky Bottom Bar -->
   <div class="sticky-bar">
     <div class="sticky-inner">
-      <div class="total-block">
-        <span class="total-label" id="deliveryHint">預估金額 (滿 $120 免收送費)</span>
-        <span class="total-amount">HKD $<span id="totalPrice">0</span></span>
+      <div class="total-info">
+        <span class="total-hint" id="deliveryHint">預估金額（滿 $120 享同區免費收送）</span>
+        <span class="total-val">HKD $<span id="totalDisplay">0</span></span>
       </div>
-      <button type="button" class="btn-whatsapp" onclick="sendWhatsApp()">
-        📲 透過 WhatsApp 傳送訂單
+      <button type="button" class="btn-submit" onclick="sendToWhatsApp()">
+        <svg class="icon icon-sm" viewBox="0 0 24 24">
+          <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+        </svg>
+        <span>透過 WhatsApp 傳送訂單</span>
       </button>
     </div>
   </div>
 
   <script>
-    // 請在此處修改為你店鋪的真實 WhatsApp 號碼（必須以 852 開頭，不要加 + 或空格）
-    const SHOP_WHATSAPP_NUMBER = "85291234567";
+    // 店舖收單 WhatsApp 號碼
+    const SHOP_PHONE = "85297891291";
+    let washPounds = 0;
 
-    let pounds = 0;
-
-    function changePound(delta) {
-      if (pounds === 0 && delta > 0) {
-        pounds = 6; // 首6磅起計
+    function stepPounds(delta) {
+      if (washPounds === 0 && delta > 0) {
+        washPounds = 6; // 首6磅起計
       } else {
-        pounds += delta;
-        if (pounds < 6 && delta < 0) {
-          pounds = 0;
+        washPounds += delta;
+        if (washPounds < 6 && delta < 0) {
+          washPounds = 0;
         }
       }
-      document.getElementById("poundQty").textContent = pounds;
-      recalculate();
+      document.getElementById("washPoundsDisplay").innerText = washPounds;
+      calculate();
     }
 
-    function changeQty(btn, delta) {
-      const qtySpan = btn.parentElement.querySelector(".qty-val");
-      let current = parseInt(qtySpan.textContent, 10) || 0;
-      current = Math.max(0, current + delta);
-      qtySpan.textContent = current;
-      recalculate();
+    function stepItem(btn, delta) {
+      const numEl = btn.parentElement.querySelector(".qty-num");
+      let qty = parseInt(numEl.innerText, 10) || 0;
+      qty = Math.max(0, qty + delta);
+      numEl.innerText = qty;
+      calculate();
     }
 
-    function recalculate() {
+    function calculate() {
       let total = 0;
-      let lines = [];
+      let previewLines = [];
 
-      // Calculate pound laundry
-      if (pounds > 0) {
-        const poundCost = 60 + Math.max(0, pounds - 6) * 8;
-        total += poundCost;
-        lines.push({ label: `磅洗 (${pounds} 磅)`, cost: poundCost });
+      // 計算磅洗 (首6磅 $60，其後每磅 $8)
+      if (washPounds > 0) {
+        const pPrice = washPounds <= 6 ? 60 : 60 + (washPounds - 6) * 8;
+        total += pPrice;
+        previewLines.push({ name: `磅洗約 ${washPounds} 磅`, priceText: `$${pPrice}` });
       }
 
-      // Calculate piece-based items
-      const items = document.querySelectorAll(".service-item[data-name]");
-      items.forEach((item) => {
-        const qty = parseInt(item.querySelector(".qty-val").textContent, 10) || 0;
+      // 掃描所有計費項目
+      document.querySelectorAll(".item-row[data-name]").forEach((row) => {
+        const qty = parseInt(row.querySelector(".qty-num").innerText, 10) || 0;
         if (qty > 0) {
-          const name = item.getAttribute("data-name");
-          const price = parseInt(item.getAttribute("data-price"), 10) || 0;
+          const name = row.getAttribute("data-name");
+          const price = parseFloat(row.getAttribute("data-price")) || 0;
           const sub = qty * price;
           total += sub;
-          lines.push({ label: `${name} x ${qty}`, cost: sub });
+          previewLines.push({
+            name: `${name} x ${qty}`,
+            priceText: price > 0 ? `$${sub}` : "免費"
+          });
         }
       });
 
-      document.getElementById("totalPrice").textContent = total;
+      document.getElementById("totalDisplay").innerText = total;
 
-      // Update delivery threshold hint
+      // 更新免運費提示
       const hintEl = document.getElementById("deliveryHint");
       if (total === 0) {
-        hintEl.textContent = "預估金額 (滿 $120 免收送費)";
+        hintEl.className = "total-hint";
+        hintEl.innerText = "預估金額（滿 $120 享同區免費收送）";
       } else if (total >= 120) {
-        hintEl.textContent = "✅ 已符合同區免費上門收送";
+        hintEl.className = "total-hint free";
+        hintEl.innerText = "已符合同區免費上門收送條件";
       } else {
-        hintEl.textContent = `預估金額 (差 $${120 - total} 享同區免費收送)`;
+        hintEl.className = "total-hint";
+        hintEl.innerText = `預估金額（尚差 $${120 - total} 享同區免費收送）`;
       }
 
-      // Render summary preview
-      const summaryEl = document.getElementById("summaryContent");
-      if (lines.length === 0) {
-        summaryEl.className = "summary-empty";
-        summaryEl.innerHTML = "尚未選擇任何服務項目（如不確定磅數，亦可直接填寫地址按下方 WhatsApp 預約）";
+      // 更新即時明細預覽
+      const previewEl = document.getElementById("previewContent");
+      if (previewLines.length === 0) {
+        previewEl.className = "preview-empty";
+        previewEl.innerHTML = "尚未點選任何服務項目（如不確定重量，可直接填寫聯絡電話及地址並按下方按鈕預約到場過磅）";
       } else {
-        summaryEl.className = "";
-        summaryEl.innerHTML = lines
-          .map(
-            (l) =>
-              `<div class="summary-line"><span>• ${l.label}</span><span>$${l.cost}</span></div>`
-          )
+        previewEl.className = "";
+        previewEl.innerHTML = previewLines
+          .map((item) => `<div class="preview-row"><span>${item.name}</span><span>${item.priceText}</span></div>`)
           .join("");
       }
+
+      return total;
     }
 
-    function sendWhatsApp() {
+    function sendToWhatsApp() {
       const name = document.getElementById("custName").value.trim();
       const phone = document.getElementById("custPhone").value.trim();
-      const address = document.getElementById("custAddress").value.trim();
-      const slot = document.getElementById("pickupSlot").value;
+      const addr = document.getElementById("custAddress").value.trim();
+      const time = document.getElementById("pickupTime").value;
       const remarks = document.getElementById("remarks").value.trim();
-      const total = document.getElementById("totalPrice").textContent;
+      const total = calculate();
 
-      if (!name || !phone || !address) {
-        alert("請先填寫「顧客姓名」、「聯絡電話」及「收送地址」，方便安排師傅上門收衫！");
-        document.getElementById("order-form").scrollIntoView({ behavior: "smooth" });
+      if (!phone || !addr) {
+        alert("請填寫聯絡電話及收送地址！");
+        document.getElementById("booking").scrollIntoView({ behavior: "smooth" });
         return;
       }
 
-      let itemLines = [];
-      if (pounds > 0) {
-        const poundCost = 60 + Math.max(0, pounds - 6) * 8;
-        itemLines.push(`- 磅洗 (${pounds} 磅)：$${poundCost}`);
+      let items = [];
+
+      // 擷取磅洗項目
+      if (washPounds > 0) {
+        const pPrice = washPounds <= 6 ? 60 : 60 + (washPounds - 6) * 8;
+        items.push(`- 磅洗約 ${washPounds} 磅 ($${pPrice})`);
       }
 
-      document.querySelectorAll(".service-item[data-name]").forEach((item) => {
-        const qty = parseInt(item.querySelector(".qty-val").textContent, 10) || 0;
+      // 擷取其他所有大於 0 的項目
+      document.querySelectorAll(".item-row[data-name]").forEach((row) => {
+        const qty = parseInt(row.querySelector(".qty-num").innerText, 10) || 0;
         if (qty > 0) {
-          const name = item.getAttribute("data-name");
-          const price = parseInt(item.getAttribute("data-price"), 10) || 0;
-          itemLines.push(`- ${name} x ${qty}：$${qty * price}`);
+          const itemName = row.getAttribute("data-name");
+          const price = parseFloat(row.getAttribute("data-price")) || 0;
+          const itemTotalText = price > 0 ? ` ($${qty * price})` : ` (免費)`;
+          items.push(`- ${itemName} x ${qty}${itemTotalText}`);
         }
       });
 
-      const serviceText =
-        itemLines.length > 0 ? itemLines.join("\n") : "- 尚未點選項目（需上門過磅／報價）";
+      const msg =
+        `【俊傑洗衣 - 新預約訂單】\n` +
+        `顧客：${name || "客人"} (${phone})\n` +
+        `地址：${addr}\n` +
+        `收件時段：${time}\n` +
+        `預約項目：\n${items.join("\n") || "- 待到場確認"}\n` +
+        `預估金額：HKD $${total}\n` +
+        (remarks ? `備註：${remarks}\n` : "") +
+        `--------------------\n請確認收件時間，謝謝！`;
 
-      const message =
-        `【俊傑洗衣 - 線上預約收送訂單】\n` +
-        `👤 顧客姓名：${name}\n` +
-        `📞 聯絡電話：${phone}\n` +
-        `📍 收送地址：${address}\n` +
-        `⏰ 期望時段：${slot}\n\n` +
-        `🧺 預約服務內容：\n${serviceText}\n\n` +
-        `📝 特別備註：${remarks || "無"}\n` +
-        `💰 預估總金額：HKD $${total}\n` +
-        `（實際金額以師傅過磅及點算後為準）`;
-
-      const encoded = encodeURIComponent(message);
-      window.open(`https://wa.me/${SHOP_WHATSAPP_NUMBER}?text=${encoded}`, "_blank");
+      const url = `https://wa.me/${SHOP_PHONE}?text=${encodeURIComponent(msg)}`;
+      window.location.href = url;
     }
   </script>
 </body>
